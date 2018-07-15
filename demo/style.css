@@ -1,0 +1,15 @@
+.play-button, .track-title {
+  display: inline-block;
+}
+.play-button {
+  margin-right: 2em;
+}
+.progress-bar {
+  border: 1px solid darkgray;
+}
+.progress-bar__current {
+  height: 0.5em;
+ }
+.playing .progress-bar__current {
+  background-color: skyblue;
+}
