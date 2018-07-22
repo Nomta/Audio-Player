@@ -10,6 +10,19 @@
 .progress-bar__current {
   height: 0.5em;
  }
-.playing .progress-bar__current {
+.playing .progress-bar__current,
+.paused .progress-bar__current {
   background-color: skyblue;
+}
+.error {
+  position: relative;
+}
+.error:after {
+  content: 'error';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2em;
+  background-color: white;
+  color: red;
 }

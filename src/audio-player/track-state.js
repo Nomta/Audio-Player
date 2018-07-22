@@ -9,7 +9,7 @@ var changeTrackState = function(options) {
 		options.buttonText : '';
 	
 	buttonStates = buttonText ? {
-	    paused: buttonText[0],
+	  paused: buttonText[0],
 		playing: buttonText[1]
 	} : null;
 						
@@ -25,6 +25,12 @@ var changeTrackState = function(options) {
 			case 'playing': 
 				changeClass('paused', 'playing');
 				changeButton('playing');
+				break;
+			
+			case 'error': 
+				currentTrack.classList.add(
+          getModifierClassName('error')
+        );
 				break;
 				
 			default: 
