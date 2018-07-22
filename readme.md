@@ -1,10 +1,10 @@
 # Audio Player
 A handy playlist widget based on [YandexAudio](https://github.com/yandex/audio-js), displaying tracks as a list.  
-*Удобный плей-лист виджет, основанный на [YandexAudio](https://github.com/yandex/audio-js), с отображением треков в виде списка.*  
+*Удобный плей-лист виджет, основанный на YandexAudio, с отображением треков в виде списка.*  
 
 Dependencies: [YandexAudio](https://github.com/yandex/audio-js).
 
-## How to
+## Usage
 
 ```html
   <script src="YandexAudio/index.min.js"></script>
@@ -26,9 +26,9 @@ Dependencies: [YandexAudio](https://github.com/yandex/audio-js).
 | Option | Type | Description |
 | --- | --- | --- |
 | `tracks` | Array | An array of track names. Default: `[]` |
-| `pathName` | String | Path to files, must be ended with a slash. <br> Default: `''` |
+| `pathName` | String | Path to files, must be ended with a slash. Default: `''` |
 | `ext` | String | File extension, default: `'.mp3'` |
-| `container` | Node | Parent element for play list. <br> Default: `document.body` |
+| `container` | Node | Parent element for play list. Default: `document.body` |
 | `className` | String | CSS class name for every track element and prefix for its children. <br> Default: `''` |
 | `buttonText` | Array of strings | Text for playback control button, that must have two states. <br> Default: `['Play', 'Pause']` |  
 
