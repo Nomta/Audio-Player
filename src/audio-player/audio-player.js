@@ -12,10 +12,10 @@ module.exports = function(options) {
 		
 	function controlPlayback(trackElem) {
 		
-		getUrl 					= options.getUrl,
+		getUrl 					      = options.getUrl,
 		getModifierClassName 	= options.getModifierClassName,
 		getChildClassName 		= options.getChildClassName,
-		changeTrackState		= options.changeTrackState;
+		changeTrackState		  = options.changeTrackState;
 		
 		
 		var state		= audioPlayer.getState(),
@@ -31,33 +31,38 @@ module.exports = function(options) {
 		
 			
 		function pause() {
-			changeTrackState('paused');
-			audioPlayer.pause();
+			audioPlayer.pause().then(updateState);
 		}	
 		function resume() {
-			changeTrackState('playing');
-			audioPlayer.resume();
+			audioPlayer.resume().then(updateState);
 		}
 		function play(trackElem) {
 			var track = getUrl(trackElem.getAttribute('data-name'));
 				
 			if (currentTrack) resetState();
 			
-			currentTrack 	= trackElem;
-			progress 		= currentTrack.getElementsByClassName(getChildClassName('progress-bar'))[0];
+			currentTrack = trackElem;
+			progress = currentTrack.getElementsByClassName(getChildClassName('progress-bar'))[0];
 			
 			updatePlaybackPosition();
-			changeTrackState('playing');
 			
 			if (audioPlayer.isPreloaded(track)) 
-				audioPlayer.playPreloaded(track);
-			else audioPlayer.play(track);
+				audioPlayer.playPreloaded(track).then(updateState, showErr);
+			else audioPlayer.play(track).then(updateState, showErr);
 		}
 		
 		
 		function resetState() {
 			changeTrackState('reset');
 		}
+    
+    function updateState() {
+			changeTrackState(audioPlayer.getState());
+    }
+    
+    function showErr() {
+      changeTrackState('error');
+    }
 	
 		function updatePlaybackPosition() {
 			
