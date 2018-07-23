@@ -9,8 +9,8 @@ var changeTrackState = function(options) {
 		options.buttonText : '';
 	
 	buttonStates = buttonText ? {
-	  paused: buttonText[0],
-		playing: buttonText[1]
+	    paused: buttonText[0],
+	    playing: buttonText[1]
 	} : null;
 						
 	getModifierClassName = options.getModifierClassName;
@@ -29,8 +29,8 @@ var changeTrackState = function(options) {
 			
 			case 'error': 
 				currentTrack.classList.add(
-          getModifierClassName('error')
-        );
+          				getModifierClassName('error')
+       				);
 				break;
 				
 			default: 
@@ -45,7 +45,7 @@ var changeTrackState = function(options) {
 	
 	function changeClass(currentState, newState) {
 		var current	= getModifierClassName(currentState),
-			target = getModifierClassName(newState);
+		    target 	= getModifierClassName(newState);
 		
 		currentTrack.classList.remove(current);
 		currentTrack.classList.add(target);
