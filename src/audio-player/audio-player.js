@@ -7,19 +7,19 @@ var getUrl, getModifierClassName, getChildClassName, changeTrackState, progress;
 	
 module.exports = function(options) {
 	
-	this.controlPlayback 			= controlPlayback,
-	this.handlePlaybackPosition		= handlePlaybackPosition;
+	this.controlPlayback 		= controlPlayback,
+	this.handlePlaybackPosition	= handlePlaybackPosition;
 		
 	function controlPlayback(trackElem) {
 		
-		getUrl 					      = options.getUrl,
+		getUrl 			= options.getUrl,
 		getModifierClassName 	= options.getModifierClassName,
-		getChildClassName 		= options.getChildClassName,
-		changeTrackState		  = options.changeTrackState;
+		getChildClassName 	= options.getChildClassName,
+		changeTrackState	= options.changeTrackState;
 		
 		
-		var state		= audioPlayer.getState(),
-			isTarget 	= currentTrack === trackElem;
+		var state	= audioPlayer.getState(),
+		    isTarget 	= currentTrack === trackElem;
 		
 		if (isTarget && state === 'playing')
 			pause();
