@@ -30,7 +30,7 @@ Dependencies: [YandexAudio](https://github.com/yandex/audio-js).
 | `ext` | String | File extension, default: `'.mp3'` |
 | `container` | Node | Parent element for play list. Default: `document.body` |
 | `className` | String | CSS class name for every track element and prefix for its children. <br> Default: `''` |
-| `buttonText` | Array of strings | Text for playback control button, that must have two states. <br> Default: `['Play', 'Pause']` |  
+| `buttonText` | Array | Text for playback control button, that must have two states. <br> Default: `['Play', 'Pause']` |  
 
 ## Global variables
 Global variables are used:
